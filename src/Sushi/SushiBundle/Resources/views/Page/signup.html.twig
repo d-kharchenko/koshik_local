@@ -1,0 +1,45 @@
+{# src/Sushi/SushiBundle/Resources/views/Page/signup.html.twig #}
+{% extends 'SushiSushiBundle::layout.html.twig' %}
+	{% block stylesheets %}
+	    <script src="{{ asset('js/jq.min.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/reg-style.css') }}">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="{{ asset('js/userpage.js') }}"></script>
+	{% endblock %}
+	{% block body %}
+				<div class="wrap">
+					<div class="container">
+						<div class="logo">
+							<a href="{{ path('sushi_sushi_startpage')}}"><img src="{{ asset('img/logo.png') }}" class="logo__item"></a>
+						</div>
+						<div class="form-signup">
+							<form>
+								<div class="form-block">
+									<label for="user-name">Ім'я</label><br>
+									<input class="form-input" type="text" name="user-name" id="user-name" required>
+								</div>
+								<div class="form-block">
+									<label for="phone">Номер телефону</label><br>
+									<input class="form-input" type="tel" name="phone" id="phone"  maxlength="10" minlength="10" required="" pattern="[0-9]{10}" required> 
+								</div>
+								<div class="form-block">
+									<label for="email">E-mail</label><br>
+									<input class="form-input" type="email" name="email" id="email" required> 
+								</div>
+								<div class="form-block">
+									<label for="password">Пароль</label><br>
+									<input class="form-input" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Пароль має містити хоча б одну велику літеру, одне число та довжиною не менше 6 символів" required>
+								</div>
+								<div class="form-block confirm-block">
+									<label for="confirm-password">Підтвердити пароль</label><br>
+									<input class="form-input" type="password" name="confirm-password" id="confirm-password" required><br>
+								</div>
+								<button class="btn btn-enter">Зарєструватися</button>
+								<div class="form-block form-block--red-ender">
+									<p>Вже зареєстровані? <a href="{{ path('sushi_sushi_login')}}">Увійти</a></p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+	{% endblock %}

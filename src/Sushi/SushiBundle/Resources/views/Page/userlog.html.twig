@@ -1,0 +1,219 @@
+{# src/Sushi/SushiBundle/Resources/views/Page/userlog.html.twig #}
+{% extends 'SushiSushiBundle::layout.html.twig' %}
+	{% block stylesheets %}
+	    <script src="{{ asset('js/jq.min.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user-page.css') }}">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="{{ asset('js/userpage.js') }}"></script>
+	{% endblock %}
+	{% block body %}
+				<div class="wrap">
+                    <div class="container">
+                    	<header>
+							<nav class="header-nav">
+								<ul class="header-nav__list">
+									<li class="header-nav__item"><a href="{{ path('sushi_sushi_startpage')}}" class="header-block__md-logo"><img src="img/logo.png" class="header-logo" alt="logo" title="Кошик суші - Головна"></a></li>
+									<li class="header-nav__item"><a href="{{ path('sushi_sushi_startpage')}}" class="header-nav__link" >Головна</a></li>
+									<li class="header-nav__item"><a href="{{ path('sushi_sushi_homepage')}}" class="header-nav__link" title="Кошик суші - зробити замовлення">Замовити</a></li>
+									<li class="header-nav__item"><a href="{{ path('sushi_sushi_startpage')}}#for-delivery" class="header-nav__link">Доставка</a></li>
+									<li class="header-nav__item"><a href="{{ path('sushi_sushi_startpage')}}#for-contacts" class="header-nav__link">Контакти</a></li>
+								</ul>
+							</nav>
+                    	</header>
+                    	<div class="main" id="main">
+                    		
+                    		<div class="sidebar">
+                    			<div class="hide-sidebar">
+                    				<img src="{{ asset('img/menu.png') }}" class="hide-sidebar__item">
+                    			</div>
+                    			<ul class="sidebar__list">
+                    				<li class="sidebar__item sidebar--personal"><a href="#personal-block">Мої бали</a></li>
+                    				<li class="sidebar__item sidebar--shares"><a href="#shares-block">Акції</a></li>
+                    				<li class="sidebar__item sidebar--order-history"><a href="#ord-history-block">Історія замовлень</a></li>
+                    				<li class="sidebar__item sidebar--settings"><a href="#settings-block">Налаштування</a></li>
+                    				<li class="sidebar__item sidebar--logout">Вихід</li>
+                    			</ul>
+                    		</div>
+                    		<div id="personal-block" class="main-text-wrap">
+                    			<h3 class="main-title">На Вашиму рахунку:</h3>
+                    			<div class="personal-bonus">
+                    				<p class="personal-block__item"><span class="personal-block__bonus">500</span> балів</p>
+                    			</div>
+                    			<div class="bonus-history">
+                    				<h4 class="bonus-history__title">Історія нарахування балів</h4>
+                    				<div class="ord-history-month">
+                    					<img src="{{ asset('img/month-arrow.png') }}" class="ord-history-month__arrow ord-history-month--left-arrow">
+                    					<p class="ord-history-month__title">Грудень <sup class="ord-history-month__title-year">2017</sup></p>
+                    					<img src="{{ asset('img/month-arrow.png') }}" class="ord-history-month__arrow">
+                    				</div>
+                    				<table class="bonus-history__table">
+                    					<tr>
+                    						<th>Дата проведення</th>
+                    						<th>За що нараховані бали (переробить)</th>
+                    						<th>К-ть балів</th>
+                    					</tr>
+                    					<tr class="bonus-history__row">
+                    						<td>20.12.2017</td>
+                    						<td>Нарахування балів за - Замовлення суші</td>
+                    						<td class="bonus-history__plus-bonus">+110</td>
+                    					</tr>
+                    					<tr class="bonus-history__row">
+                    						<td>21.12.2017</td>
+                    						<td>Нарахування балів за - Придбання товарів в м-ні Кошик, вул.Прокоф'єва</td>
+                    						<td class="bonus-history__plus-bonus">+390</td>
+                    					</tr>
+                    					<tr class="bonus-history__row">
+                    						<td>15.12.2017</td>
+                    						<td>Списання балів - обмні в магазин і т.п. (переробить)</td>
+                    						<td class="bonus-history__minus-bonus">-300</td>
+                    					</tr>
+                    				</table>
+                    			</div>		
+                    		</div>
+                    		<div id="shares-block" class="main-text-wrap">
+                    			<h3 class="main-title">Акції та пропозиції</h3>
+                    			
+                    			
+                    		</div>
+                    		<div id="ord-history-block" class="main-text-wrap">
+                    			<h3 class="main-title">Історія замовлень</h3>
+                    			<div class="ord-history-wrap">
+                    				<div class="ord-history-month">
+                    					<img src="{{ asset('img/month-arrow.png') }}" class="ord-history-month__arrow ord-history-month--left-arrow">
+                    					<p class="ord-history-month__title">Грудень <sup class="ord-history-month__title-year">2017</sup></p>
+                    					<img src="{{ asset('img/month-arrow.png') }}" class="ord-history-month__arrow">
+                    				</div>
+                    				<table class="order-table">
+										<tr class="order-table__header">
+											<th>№</th>
+											<th>Дата замовлення</th>
+											<th>Адреса магазину</th>
+											<th>Сума</th>
+											<th>...</th>
+										</tr>
+										<tr class="order-table__rows">
+											<td>1.</td>
+											<td>21.12.2017</td>
+											<td>площа Покровська, 3, Кошик ЦУМ</td>
+											<td>82.00</td>
+											<td>
+												<a href="{{ path('sushi_sushi_orderhistory')}}" class="ord-table__item">Переглянути</a>
+											</td>
+										</tr>
+										<tr class="order-table__rows">
+											<td>2.</td>
+											<td>19.12.2017</td>
+											<td>вул. Прокоф'єва, 32, Кошик</td>
+											<td>82.00</td>
+											<td>
+												<a href="{{ path('sushi_sushi_orderhistory')}}" class="ord-table__item">Переглянути</a>
+											</td>
+										</tr>
+										<tr class="order-table__rows">
+											<td>3.</td>
+											<td>18.12.2017</td>
+											<td>вул. Прокоф'єва, 32, Кошик</td>
+											<td>150.00</td>
+											<td>
+												<a href="{{ path('sushi_sushi_orderhistory')}}" class="ord-table__item">Переглянути</a>
+											</td>
+										</tr>
+									</table>
+                    			</div>	
+                    			
+                    		</div>
+                    		<div id="settings-block" class="main-text-wrap">
+                    			<h3 class="main-title">Налаштування</h3>
+                    			<div class="settings-navbar" id="settings-navbar">
+                    				<ul class="settings-navbar__list">
+                    					<li><a href="#personal-data" class="settings-navbar__title">Персональні дані</a></li>
+                    					<li><a href="#password-data" class="settings-navbar__title">Змінити пароль</a></li>
+                    					<li><a href="#phone-data" class="settings-navbar__title" >Змінити номер телефону</a></li>
+                    					<li><a href="#email-data" class="settings-navbar__title">Змінити E-mail</a></li>
+                    				</ul>
+                    				<div class="edit-block-wrap edit-username" id="personal-data">
+                    					<form class="edit-form" >
+                    						<ul class="edit-username__list">
+                    							<li>
+                    								<label for="user-first-name">Им'я</label>
+                    							</li>
+                    							<li>
+                    								<input class="edit-block-input" type="text" name="user-first-name" id="user-first-name">
+                    							</li>
+                    							<li>
+                    								<label for="user-second-name">Прізвище</label>
+                    							</li>
+                    							<li>
+                    								<input class="edit-block-input" type="text" name="user-second-name" id="user-second-name">
+                    							</li>
+                    							<li>
+                    								<label for="user-adress">Адреса</label>
+                    							</li>
+                    							<li>
+                    								<input class="edit-block-input" type="text" name="user-adress">
+                    							</li>
+                    						</ul>
+                    						<span class="add-adress">Додати адресу</span>
+                    						<button class="btn edit-password__btn">Змінити</button>
+                    					</form>
+                    				</div>
+                    				<div class="edit-block-wrap edit-password" id="password-data">
+	                    				
+	                    				<form class="edit-form" >
+	                    					<ul>
+	                    						<li>
+	                    							<label for="old-password">Cтарий пароль</label>
+	                    						</li>
+	                    						<li>
+	                    							<input class="edit-block-input" type="password" name="old-password" id="old-password">
+	                    						</li>
+	                    						<li>
+	                    							<label for="new-password">Новий пароль</label>
+	                    						</li>
+	                    						<li>
+	                    							<input class="edit-block-input" type="password" name="new-password" id="new-password" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Пароль має містити хоча б одну велику літеру, одне число та довжиною не менше 6 символів" required>
+	                    						</li>
+	                    						<li>
+	                    							<label for="confirm-new-password">Підтвердіть новий пароль</label>
+	                    						</li>
+	                    						<li>
+	                    							<input class="edit-block-input" type="password" name="confirm-new-password" id="confirm-new-password" required>
+	                    						</li>
+	                    					</ul>
+	                    					<button class="btn edit-password__btn">Змінити</button>
+	                    				</form>
+	                    			</div>
+	                    			<div class="edit-block-wrap edit-phone" id="phone-data">
+	                    				
+	                    				<form class="edit-form" >
+	                    					<ul>
+	                    						<li>
+	                    							<label for="new-phone">Введіть новий неомер</label>
+	                    						</li>
+	                    						<li>
+	                    							<input class="edit-block-input" type="tel" name="new-phone" id="new-phone" maxlength="10" minlength="10" required="" pattern="[0-9]{10}" required>
+	                    						</li>
+	                    					</ul>
+	                    					<button class="btn edit-phpne__btn">Змінити</button>
+	                    				</form>
+	                    			</div>
+	                    			<div class="edit-block-wrap edit-email" id="email-data">
+	                    				
+	                    				<form class="edit-form" >
+	                    					<ul>
+	                    						<li>
+	                    							<label for="new-email">Введіть новий E-mail</label>
+	                    						</li>
+	                    						<li>
+	                    							<input class="edit-block-input" type="email" name="new-email" id="new-email" required>
+	                    						</li>
+	                    					</ul>
+	                    					<button class="btn edit-email__btn">Змінити</button>
+	                    				</form>
+	                    			</div>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+				</div>
+	{% endblock %}

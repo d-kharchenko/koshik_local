@@ -1,0 +1,93 @@
+{# src/Sushi/SushiBundle/Resources/views/Page/orderhistory.html.twig #}
+{% extends 'SushiSushiBundle::layout.html.twig' %}
+	{% block stylesheets %}
+	    <script src="{{ asset('js/jq.min.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/user-page.css') }}">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="{{ asset('js/app.js') }}"></script>
+	{% endblock %}
+	{% block body %}
+				<div class="wrap">
+                    <div class="container">
+                    	<div class="ord-wrap">
+                    		<h3 class="ord-wrap__title">Замовлення від 21.12.2017</h3>
+                    		<table class="ord-history-table">
+                    			<tr>
+                    				<td>
+                    					<table class="inside-table">
+			                    			<tr>
+			                    				<th class="inside-table__left-col">№</th>
+												<th class="inside-table__center-col">Роли</th>
+												<th class="inside-table__right-col">Сума</th>
+			                    			</tr>
+			                    			<tr>
+			                    				<td>1.</td>
+			                    				<td class="inside-table__center-row">Червоний дракон шт</td>
+			                    				<td>74.00</td>
+			                    			</tr>
+			                    			<tr>
+			                    				<td colspan="2">Всього, грн:</td>
+												<td>74.00</td>
+			                    			</tr>
+		                    			</table>
+                    				</td>
+                    				
+                    			</tr>
+                    			<tr>
+                    				<td>
+                    					<table class="inside-table">
+	                    					<tr>
+			                    				<th class="inside-table__left-col">№</th>
+												<th class="inside-table__center-col">Палочки</th>
+												<th class="inside-table__right-col">К-сть</th>
+			                    			</tr>
+			                    			<tr>
+												<td>1.</td>
+												<td class="inside-table__center-row">Комплект палочок</td>
+												<td>0</td>
+											</tr>
+											<tr>
+												<td>2.</td>
+												<td class="inside-table__center-row">Комплект учбових паличок</td>
+												<td>0</td>
+											</tr>
+	                    				</table>
+                    				</td>
+                    			</tr>
+                    			<tr>
+                    				<td>
+                    					<table class="inside-table">
+											<tr >
+												<td colspan="2" class="inside-table__total-rows">Сума замовлення:</td>
+												<td class="inside-table__td-col">74.00</td>
+											</tr>
+										</table>
+                    				</td>
+								</tr>
+								<tr>
+									<td>
+										<table class="inside-table">
+											<tr>
+												<td colspan="2" class="inside-table__total-rows">Вартість доставки:</td>
+												<td class="inside-table__td-col">35.00</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table class="inside-table">
+											<tr >
+												<td colspan="2" class="inside-table__total-rows">Загальна сума замовлення, грн:</td>
+												<td class="inside-table__td-col">109.00</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+                    		</table>
+                    		<button class="btn">Повторне замовлення</button>
+                    		<a href="{{ path('sushi_sushi_userlog')}}"><button class="btn">Повернутися</button></a>
+                    	</div>
+					</div>
+				</div>
+	{% endblock %}
